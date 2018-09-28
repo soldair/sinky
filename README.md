@@ -3,9 +3,10 @@
 run async node apis like `http` as sync
 
 ```js
-const syncChannel = require('sync-channel')
-const workerPath = path.join(__dirname, '/request-worker.js')
-const channelPath = path.join(__dirname, 'request-fifo')
+const path = require('path')
+const syncChannel = require('./')
+const workerPath = path.join(__dirname, '/example-worker.js')
+const channelPath = path.join(__dirname, 'example-fifo')
 let requestFile = syncChannel(channelPath, workerPath)
 
 // look ma no await!
@@ -17,12 +18,13 @@ worker.js
 
 ```js
 const fifo = process.argv[2]
-const request = require('teeny-request')
-const { workerRead, workerWrite } = require('sync-channel')
+const request = require('teeny-request').teenyRequest
+const { workerRead, workerWrite } = require('./')
 
 workerRead((url) => {
-  request({uri:url},()=>{
-    workerWrite(fifo, '' + b)
+  request({uri:url},(err,res,body)=>{
+    console.log(err,res)
+    workerWrite(fifo, body)
   })
 })
 ```
