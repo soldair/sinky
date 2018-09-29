@@ -7,7 +7,7 @@ run async node apis like `http` as sync
 ```js
 const path = require('path')
 const sinky = require('sinky')
-const workerPath = path.join(__dirname, '/example-worker.js')
+const workerPath = path.join(__dirname, 'example-worker.js')
 const channelPath = path.join(__dirname, 'example-fifo')
 let requestFile = sinky(channelPath, workerPath)
 

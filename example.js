@@ -14,7 +14,7 @@
 
 const path = require('path')
 const syncChannel = require('./')
-const workerPath = path.join(__dirname, '/example-worker.js')
+const workerPath = path.join(__dirname, 'example-worker.js')
 const channelPath = path.join(__dirname, 'example-fifo')
 let requestFile = syncChannel(channelPath, workerPath)
 
