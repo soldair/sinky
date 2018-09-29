@@ -6,10 +6,10 @@ run async node apis like `http` as sync
 
 ```js
 const path = require('path')
-const syncChannel = require('./')
+const sinky = require('sinky')
 const workerPath = path.join(__dirname, '/example-worker.js')
 const channelPath = path.join(__dirname, 'example-fifo')
-let requestFile = syncChannel(channelPath, workerPath)
+let requestFile = sinky(channelPath, workerPath)
 
 // look ma no await!
 let contents = requestFile('https://unpkg.com/yargs@12.0.2/README.md')
@@ -21,7 +21,7 @@ worker.js
 ```js
 const fifo = process.argv[2]
 const request = require('teeny-request').teenyRequest
-const { workerRead, workerWrite } = require('./')
+const { workerRead, workerWrite } = require('sinky')
 
 workerRead((url) => {
   request({uri:url},(err,res,body)=>{
