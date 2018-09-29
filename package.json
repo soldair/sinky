@@ -1,6 +1,6 @@
 {
   "name": "sinky",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "run async node apis like http as sync",
   "main": "index.js",
   "scripts": {
