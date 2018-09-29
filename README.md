@@ -1,4 +1,6 @@
-# sync-channel
+# sinky
+
+sink your ships or sync fetch your files. yarrr
 
 run async node apis like `http` as sync
 
@@ -23,7 +25,6 @@ const { workerRead, workerWrite } = require('./')
 
 workerRead((url) => {
   request({uri:url},(err,res,body)=>{
-    console.log(err,res)
     workerWrite(fifo, body)
   })
 })

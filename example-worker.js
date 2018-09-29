@@ -17,9 +17,7 @@ const request = require('teeny-request').teenyRequest
 const { workerRead, workerWrite } = require('./')
 
 workerRead((url) => {
-  console.log(url)
   request({uri:url},(err,res,body)=>{
-    console.log(err,res)
     workerWrite(fifo, body)
   })
 })
