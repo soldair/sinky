@@ -1,6 +1,6 @@
 {
   "name": "sinky",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "run async node apis like http as sync",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,7 @@
     "async-to-sync"
   ],
   "author": "Ryan Day <ryaneday@google.com>",
-  "repository":"soldair/sinky",
+  "repository": "soldair/sinky",
   "license": "Apache-2.0",
   "dependencies": {
     "split2": "^3.0.0"
